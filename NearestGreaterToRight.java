@@ -46,12 +46,10 @@ public class NearestGreaterToRight {
         for(int i=n-1; i>=0; i--){
             if(stack.isEmpty()){
                 list.add(-1);
-                stack.push(array[i]);
             }
 
             else if(!stack.isEmpty() && stack.peek()>array[i]){
                 list.add(stack.peek());
-                stack.push(array[i]);
             }
             
             else if(!stack.isEmpty() && stack.peek()<=array[i]){
@@ -64,9 +62,10 @@ public class NearestGreaterToRight {
                 }
                 else{
                     list.add(stack.peek());
-                    stack.push(array[i]);
+
                 }
             }
+            stack.push(array[i]);
         }
     }
 }
