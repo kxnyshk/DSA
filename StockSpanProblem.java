@@ -10,6 +10,7 @@ public class StockSpanProblem {
     }
     private static Stack<Integer> stack = new Stack<Integer>();
     private static List<Integer> list = new ArrayList<Integer>();
+    private static final int Idx_MIN_LIMIT = -1;
     public static void main(String[] args){
     
         int[] array = {100,80,60,70,60,75,85};
@@ -39,16 +40,11 @@ public class StockSpanProblem {
 
             else if(!stack.isEmpty() && stack.peek()<=array[i]){
                 int count = stack.indexOf(stack.peek());
-                while(array[i]>=stack.get(count)){
+                while(count>Idx_MIN_LIMIT && array[i]>=stack.get(count)){
                     count--;
                 }
 
-                if(stack.isEmpty()){
-                    list.add(i-(i-1));
-                }
-                else{
-                    list.add(i-count);
-                }
+                list.add(i-count);
             }
 
             stack.push(array[i]);
