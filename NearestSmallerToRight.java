@@ -17,12 +17,12 @@ public class NearestSmallerToRight {
 
         printArray(array, n);
 
-        nearestSmallerToLeft(array, n);
+        nearestSmallerToRight(array, n);
 
         printList(array, n);
     }
 
-    private static void nearestSmallerToLeft(int[] array, int n) {
+    private static void nearestSmallerToRight(int[] array, int n) {
         if(n == 0){
             return;
         }
