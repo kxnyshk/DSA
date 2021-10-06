@@ -14,6 +14,7 @@ public class MaxAreaHistogram {
     private static List<Integer> rightIdx = new ArrayList<Integer>();
     private static List<Integer> leftIdx = new ArrayList<Integer>();
     private static List<Integer> width = new ArrayList<Integer>();
+    private static List<Integer> area = new ArrayList<Integer>();
     private static final int pseudoIdxR = 7;
     private static final int pseudoIdxL = -1;
     public static void main(String[] args){
@@ -38,19 +39,33 @@ public class MaxAreaHistogram {
         System.out.println();
         nextSmallerToLeft(array, n);
 
+        width(n);
+        areaHistogram(array, n);
+        int maxArea = maxAreaHistogram(array, n);
+        System.out.println("Max Area: " + maxArea);
+    }
+
+    private static int maxAreaHistogram(int[] array, int n) {
+        int maxArea = 0;
+        for(int i=0; i<n; i++){
+            if(maxArea<area.get(i)){
+                maxArea = area.get(i);
+            }
+        }
+        return maxArea;
+    }
+
+    private static void areaHistogram(int[] array, int n) {
+        // System.out.println("Area under Histogram for index:");
+        for(int i=0; i<n; i++){
+            int Area = array[i]*width.get(i);
+            area.add(i, Area);
+        }
+    }
+
+    private static void width(int n) {
         for(int i=0; i<n; i++){
             width.add(i, (rightIdx.get(i)-(leftIdx.get(i))-1));
-        }
-
-        // System.out.println();
-        // for(int x: width){
-        //     System.out.print(x + " ");
-        // }
-
-        System.out.println("Max area under Histogram for index:");
-        for(int i=0; i<n; i++){
-            int maxArea = array[i]*width.get(i);
-            System.out.print(i + " : " + maxArea + "\n");
         }
     }
 
@@ -77,9 +92,6 @@ public class MaxAreaHistogram {
         }
 
         Collections.reverse(rightIdx);
-        // for(int x: rightIdx){
-        //     System.out.print(x + " ");
-        // }
     }
 
     private static void nextSmallerToLeft(int[] array, int n) {
@@ -102,10 +114,6 @@ public class MaxAreaHistogram {
             }
 
             leftStack.push(array[i]);
-        }
-
-        // for(int x: leftIdx){
-        //     System.out.print(x + " ");
-        // }        
+        }       
     }
 }
