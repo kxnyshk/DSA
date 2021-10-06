@@ -6,7 +6,7 @@ public class StockSpanProblem {
     
     static{
     
-        System.out.println("\nImplementing Stock span problem");
+        System.out.println("\nImplementing Stock span problem using Stacks.");
     }
     private static Stack<Integer> stack = new Stack<Integer>();
     private static List<Integer> list = new ArrayList<Integer>();
