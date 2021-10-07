@@ -1,2 +1,3 @@
 hello
 line 1 check
+line 2 check
