@@ -8,7 +8,7 @@ public class BinarySearchSortedArray {
     }
     public static void main(String[] args){
     
-        int[] array = {1,5,13,20,33,40,44,53,61,77};
+        int[] array = {1,5,13,20,33,40,44,53,61,77,87};
         int n = array.length;
         
         System.out.println("Enter input:");
