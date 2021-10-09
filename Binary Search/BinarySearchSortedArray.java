@@ -19,11 +19,11 @@ public class BinarySearchSortedArray {
         System.out.println("\nIndex: " + idx);
     }
 
-    private static Scanner Search() {
+    private static void Scan() {
         System.out.print("Enter input: ");
         Scanner scan = new Scanner(System.in);
         x = scan.nextInt();
-        return scan;
+        scan.close();
     }
 
     private static void printArray(int[] array) {
@@ -41,7 +41,7 @@ public class BinarySearchSortedArray {
             return start;
         }
         else{
-            Scanner scan = Search();
+            Scan();
             while(start<=end){
                 int mid = (start + (end-start)/2);
                 if(x == array[mid]){

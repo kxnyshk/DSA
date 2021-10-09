@@ -27,7 +27,7 @@ public class BinarySearchReverseSorted {
             return start;
         }
         else{
-            Scanner scan = Search();
+            Scan();
             while(start<=end){
                 int mid = (start + (end-start)/2);
     
@@ -45,11 +45,11 @@ public class BinarySearchReverseSorted {
         return -1;
     }
 
-    private static Scanner Search() {
+    private static void Scan() {
         System.out.print("\nsearch: ");
         Scanner scan = new Scanner(System.in);
         x = scan.nextInt();
-        return scan;
+        scan.close();
     }
 
     private static void printArray(int[] array) {
