@@ -44,7 +44,7 @@ public class RotationsArray {
                 }
             }
         }
-        return 0;
+        return -1;
     }
 
     private static void printArray(int[] array) {
