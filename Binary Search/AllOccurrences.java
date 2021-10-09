@@ -4,7 +4,7 @@ public class AllOccurrences {
 
     static{
     
-        System.out.println("\nFinding out all the occurences of an element in a sorted array by BS.");
+        System.out.println("\nAll occurences of an element in a sorted array by BS.");
     }
     private static int search;
     public static void main(String[] args){
@@ -15,12 +15,14 @@ public class AllOccurrences {
         printArray(array);
         Search();
 
-        allOccurrences(array, n);        
+        int first, last;
+        first = firstOccurrence(array,n);
+        last = lastOccurrence(array,n);
+
+        printOccurrences(first, last);       
     }
 
-    private static void allOccurrences(int[] array, int n) {
-        int first = firstOccurrence(array,n);
-        int last = lastOccurrence(array,n);
+    private static void printOccurrences(int first, int last) {
         System.out.print("\n" + search + " --> Index: ");
         while(first<=last){
             System.out.print(first + " ");
