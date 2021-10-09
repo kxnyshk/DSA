@@ -44,7 +44,7 @@ public class AllOccurrences {
             else if(search<array[mid]){
                 end = mid-1;
             }
-            else if(search>array[mid]){
+            else{
                 start = mid+1;
             }
         }
@@ -65,7 +65,7 @@ public class AllOccurrences {
             else if(search<array[mid]){
                 end = mid-1;
             }
-            else if(search>array[mid]){
+            else{
                 start = mid+1;
             }
         }
