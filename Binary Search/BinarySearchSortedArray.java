@@ -4,44 +4,57 @@ public class BinarySearchSortedArray {
     
     static{
     
-        System.out.println("This program traverses a Binary Search for an elemment in an array.\n");
+        System.out.println("\nBinary Search [Sorted array]");
     }
+    private static int x;
     public static void main(String[] args){
     
         int[] array = {1,5,13,20,33,40,44,53,61,77,87};
         int n = array.length;
         
-        System.out.println("Enter input:");
-        Scanner scan = new Scanner(System.in);
-        int search = scan.nextInt();
-        scan.close();
+        printArray(array);
 
-        binarySearch(array, n, search);
+        int idx;
+        idx = binarySearch(array, n);
+        System.out.println("\nIndex: " + idx);
     }
 
-    public static void binarySearch(int[] array, int n, int m) {
-        
-        int left = 0;
-        int right = n-1;
-        boolean found = false;
-        while(left<=right){
-            
-            int mid = (left+(right-left)/2);
-            if(m == array[mid]){
-                System.out.println(m + " --> " + "Index " + mid + "\n");
-                found = true;
-                break;
-            }
-            else if(m<array[mid]){
-                right = mid-1;
-            }
-            else{
-                left = mid+1;
-            }
-        }
+    private static Scanner Search() {
+        System.out.print("Enter input: ");
+        Scanner scan = new Scanner(System.in);
+        x = scan.nextInt();
+        return scan;
+    }
 
-        if(found==false){
-            System.out.println(m + " not present in array.\n");
+    private static void printArray(int[] array) {
+        System.out.print("\nArray: ");
+        for(int x: array){
+            System.out.print(x + " ");
         }
+        System.out.println();
+    }
+
+    public static int binarySearch(int[] array, int n) {
+        int start = 0;
+        int end = n-1;
+        if(n == 1){
+            return start;
+        }
+        else{
+            Scanner scan = Search();
+            while(start<=end){
+                int mid = (start + (end-start)/2);
+                if(x == array[mid]){
+                    return mid;
+                }
+                else if(x<array[mid]){
+                    end = mid-1;
+                }
+                else{
+                    start = mid+1;
+                }
+            }
+        }
+        return -1;
     }
 }
