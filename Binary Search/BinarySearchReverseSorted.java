@@ -4,48 +4,51 @@ public class BinarySearchReverseSorted {
     
     static{
     
-        System.out.println("\nImplementing binary search on a reverse sorted array.");
+        System.out.println("\nBinary search [Reverse sorted array]");
     }
-    private static int search;
+    private static int x;
     public static void main(String[] args){
     
         int[] array = {20,17,15,12,10,7,4,2,0};
         int n = array.length;
 
         printArray(array);
-        Scanner scan = Search();
 
         int idx;
-        idx = BinSearchReverse(array, n, search);
-        System.out.println("Index: " + idx);
-
-        scan.close();
+        idx = BinSearchReverse(array, n);
+        System.out.println("\nIndex: " + idx);
     }
 
-    private static int BinSearchReverse(int[] array, int n, int key) {
+    private static int BinSearchReverse(int[] array, int n) {
         int start = 0;
         int end = n-1;
 
-        while(start<=end){
-            int mid = (start + (end-start)/2);
-
-            if(key == array[mid]){
-                return mid;
-            }
-            else if(key<array[mid]){
-                start = mid+1;
-            }
-            else if(key>array[mid]){
-                end = mid-1;
+        if(n==1){
+            return start;
+        }
+        else{
+            Scanner scan = Search();
+            while(start<=end){
+                int mid = (start + (end-start)/2);
+    
+                if(x == array[mid]){
+                    return mid;
+                }
+                else if(x<array[mid]){
+                    start = mid+1;
+                }
+                else if(x>array[mid]){
+                    end = mid-1;
+                }
             }
         }
         return -1;
     }
 
     private static Scanner Search() {
-        System.out.print("\nElement to search: ");
+        System.out.print("\nsearch: ");
         Scanner scan = new Scanner(System.in);
-        search = scan.nextInt();
+        x = scan.nextInt();
         return scan;
     }
 
