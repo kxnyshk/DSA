@@ -2,12 +2,11 @@ public class RotationsArray {
 
     static{
     
-        System.out.println("\nFinding out the no. of rotations a sorted array has undergone.\n(Left --> Right)");
+        System.out.println("\nNo. of rotations a sorted array has undergone.\n(Left --> Right)");
     }
     public static void main(String[] args){
     
         int[] array = {23,45,2,7,10,14};
-        // int[] TestArray = {12,7};
         int n = array.length;
 
         printArray(array);
@@ -20,8 +19,7 @@ public class RotationsArray {
     private static int Rotations(int[] array, int n) {
         int start = 0;
         int end = n-1;
-        int left = start;
-        int right = end;
+
         if(array[start]<=array[end] || n==1){                           // sorted array or only 1 indices                             
             return start;
         }
@@ -36,10 +34,10 @@ public class RotationsArray {
                 if(array[mid]<array[prev] && array[mid]<array[next]){
                     return mid;
                 }
-                else if(array[mid]>=array[left]){
+                else if(array[mid]>=array[0]){
                     start = mid+1;
                 }
-                else if(array[mid]<=array[right]){
+                else if(array[mid]<=array[n-1]){
                     end = mid-1;
                 }
             }
