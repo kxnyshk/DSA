@@ -6,7 +6,7 @@ public class RotationsArray {
     }
     public static void main(String[] args){
     
-        int[] array = {23,45,2,7,10,14};
+        int[] array = {1,1,1,1,1};
         int n = array.length;
 
         printArray(array);
@@ -20,7 +20,7 @@ public class RotationsArray {
         int start = 0;
         int end = n-1;
 
-        if(array[start]<=array[end] || n==1){                           // sorted array or only 1 indices                             
+        if(array[start]<=array[end] || n==1){                           // sorted array or only 1 indices or all duplicate values                            
             return start;
         }
         else if(n==2){
