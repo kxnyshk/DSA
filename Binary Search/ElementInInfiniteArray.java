@@ -15,7 +15,7 @@ public class ElementInInfiniteArray {
         int n = array.length;
 
         Random randNum = new Random();
-        int x = (randNum.nextInt(MAX_LIMIT-MIN_LIMIT) + MIN_LIMIT);     // generates random number between -10
+        int x = (randNum.nextInt(MAX_LIMIT-MIN_LIMIT) + MIN_LIMIT);     // generates random number between -100 to 100
 
         int idx;
         idx = elementInfinite(array, n, x);
