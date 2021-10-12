@@ -24,26 +24,11 @@ public class ElementInInfiniteArray {
         reRunExit();
     }
 
-    private static void reRunExit() {
-        System.out.print("\nPress 1 : Re-run | 0 : Exit _");
-        Scanner scan = new Scanner(System.in);
-        int key = scan.nextInt();
-        if(key == 1){
-            main(null);
-        }
-        else if(key == 0){
-            System.exit(0);
-        }
-        else{
-            System.out.print("\nEnter only 1 or 0. ");
-            reRunExit();
-        }
-        scan.close();
-    }
-
     private static int elementInfinite(int[] array, int n, int x) {
         int start = 0;
-        int end = 1;
+        int end = start+1;
+
+        // > used instead of >= below, coz if by any chance x==array[mid], start and end gonna change and x woudnt be contained inside its range
         while(x>array[end]){
             start = end;
             end = end*2;
@@ -71,5 +56,22 @@ public class ElementInInfiniteArray {
             }
         }
         return -1;
-    }    
+    }
+
+    private static void reRunExit() {
+        System.out.print("\nPress 1 : Re-run | 0 : Exit _");
+        Scanner scan = new Scanner(System.in);
+        int key = scan.nextInt();
+        if(key == 1){
+            main(null);
+        }
+        else if(key == 0){
+            System.exit(0);
+        }
+        else{
+            System.out.print("\nEnter only 1 or 0. ");
+            reRunExit();
+        }
+        scan.close();
+    }
 }
