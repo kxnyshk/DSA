@@ -28,7 +28,7 @@ public class ElementInInfiniteArray {
         int start = 0;
         int end = start+1;
 
-        // > used instead of >= below, coz if by any chance x==array[mid], start and end gonna change and x woudnt be contained inside its range
+        // '>' used instead of '>=' below, because if by any chance 'x==array[end]', 'start' & 'end' will get incremented/exponentiated once again respc.
         while(x>array[end]){
             start = end;
             end = end*2;
