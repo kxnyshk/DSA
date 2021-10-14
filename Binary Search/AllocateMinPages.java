@@ -54,7 +54,7 @@ public class AllocateMinPages {
         int end = sum;
         int minPages = -1;
 
-        if(key>n){
+        if(key>n || key == 0){
             return -1;
         }
         while(start<=end){
