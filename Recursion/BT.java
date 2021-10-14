@@ -12,6 +12,20 @@ public class BT {
         PreOrder(root);
         System.out.print("\nBT (Post-order): ");
         PostOrder(root);
+
+        int h;
+        h = Height(root);
+        System.out.print("\n\nHeight of tree: " + h);
+    }
+
+    public static int Height(node root) {
+        if(root == null){
+            return 0;
+        }
+
+        int LHeight = Height(root.left);
+        int RHeight = Height(root.right);
+        return (Math.max(LHeight, RHeight) + 1);
     }
 
     public static node Tree(){
