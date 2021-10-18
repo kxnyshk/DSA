@@ -36,7 +36,7 @@ public class ReverseStackRecursion {
         temp = stack.peek();
         stack.pop();
 
-        count++;                                                                        // count incremented after before first reversal
+        count++;                                                                        // count incremented before first reversal
         ReOrder(stack, temp, count);
 
         ReverseStack(stack);
