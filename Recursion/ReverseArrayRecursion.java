@@ -20,11 +20,11 @@ public class ReverseArrayRecursion {
         int start = 0;                                                      // initializing start at Array IDX 0
         int end = n-1;                                                      // initializing end at Array IDX (n-1)
 
-        Reverse(array, n, start, end);
+        Reverse(array, start, end);
         print(array);
     }
 
-    private static void Reverse(int[] array, int n, int start, int end) {
+    private static void Reverse(int[] array, int start, int end) {
         if(start>=end){
             System.out.println("\nArray reversal successful..");            // Recursion stops when pointers either reaches the mid element
             return;                                                         // (Case: n = ODD) or while crossing each other (Case: n = EVEN)
@@ -35,7 +35,7 @@ public class ReverseArrayRecursion {
         start++;                                                            // bringing pointers close and swapping each other recursively
         end--;                                                              // until return statement hits
 
-        Reverse(array, n, start, end);
+        Reverse(array, start, end);
     }
 
     private static void Swap(int[] array, int start, int end) {
