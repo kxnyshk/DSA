@@ -32,7 +32,7 @@ public class DeleteMidArray {
 
         Swap(array, k);
 
-        DelMid(array, n, k+1);
+        DelMid(array, n, k+1);                                  // incrementing mid since its position changed after swapping
     }
 
     private static void Swap(int[] array, int k) {              // swapping with next value until mid reaches end
